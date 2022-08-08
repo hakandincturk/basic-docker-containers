@@ -1,0 +1,35 @@
+version: '3.1'
+
+services:
+  sMysql:
+    container_name: cMysql
+    image: mysql:debian
+    hostname: mysql
+    ports:
+      - 9090:3306
+    environment:
+      - MYSQL_USER=hakan
+      - MYSQL_PASSWORD=123456
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=ecommerce_dev
+    volumes:
+      - /C/docker-files/dd/compose-one/mysql/data:/var/lib/mysql
+    networks:
+      - mysqlDb
+  sPhpMyAdmin:
+    depends_on:
+      - sMysql
+    container_name: cPhpMyAdmin
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 9091:80
+    environment:
+      - PMA_HOST=sMysql
+    networks:
+      - mysqlDb
+
+networks:
+  mysqlDb:
+    name: mysqlDb
+    driver: bridge

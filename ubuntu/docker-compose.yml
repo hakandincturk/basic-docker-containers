@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  master:
+    image: ubuntu:bionic
+    container_name: cMaster
+    tty: true
+    networks:
+      - ubuntuNetworks
+  node1:
+    image: ubuntu:bionic
+    container_name: cNode1
+    tty: true
+    networks:
+      - ubuntuNetworks
+
+networks:
+  ubuntuNetworks:

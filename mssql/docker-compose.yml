@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  sMssql:
+    hostname: sql
+    container_name: cMssql
+    image: mcr.microsoft.com/azure-sql-edge
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_USER=SA
+      - MSSQL_SA_PASSWORD=MyPass@word
+      - MSSQL_PID=Developer
+    ports:
+      - 1433:1433
+    volumes:
+      - /C/docker-files/dd/compose-one/mssql/data:/var/opt/mssql/data
+      - /C/docker-files/dd/compose-one/mssql/secrets:/var/opt/mssql/secrets

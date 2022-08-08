@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  sJenkins:
+    container_name: cJenkinsWithDocker2
+    image: hkn/jenkinswithdocker
+    ports:
+      - 8082:8080
+      - 50000:50000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /C/docker-files/dd/compose-one/jenkins2/data:/var/jenkins-home

@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  sNginx:
+    container_name: c_nginx
+    image: nginx
+    ports:
+      - 8081:80
+      - 8082:80
+  sHtml:
+    container_name: cHtml
+    image: httpd
+    volumes:
+      - /C/docker-files/dd/compose-one/nginx/html/one/:/usr/local/apache2/htdocs
+    ports:
+      - 9090:80
+      - 9091:80
+
+volumes:
+  html:

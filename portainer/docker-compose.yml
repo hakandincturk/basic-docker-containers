@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+  sPortainer:
+    container_name: cPortainer
+    image: portainer/portainer-ce
+    ports:
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /C/docker-files/dd/compose-one/portainer/data:/data
