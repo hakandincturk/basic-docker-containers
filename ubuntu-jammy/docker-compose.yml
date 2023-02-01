@@ -2,8 +2,8 @@ version: '3.1'
 
 services:
   master:
-    image: ubuntu:bionic
-    container_name: cMaster
+    image: ubuntu:jammy
+    container_name: ubunutJammy
     tty: true
     networks:
       - ubuntuNetworks

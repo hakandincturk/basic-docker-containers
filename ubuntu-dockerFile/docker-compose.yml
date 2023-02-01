@@ -2,8 +2,8 @@ version: '3.1'
 
 services:
   master:
-    image: ubuntu:bionic
-    container_name: cMaster
+    image: ubuntu-like-amd
+    container_name: ubunut-like-amd
     tty: true
     networks:
       - ubuntuNetworks

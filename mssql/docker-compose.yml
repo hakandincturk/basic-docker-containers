@@ -13,5 +13,5 @@ services:
     ports:
       - 1433:1433
     volumes:
-      - /C/docker-files/dd/compose-one/mssql/data:/var/opt/mssql/data
-      - /C/docker-files/dd/compose-one/mssql/secrets:/var/opt/mssql/secrets
+      - /Users/hakan/code/basic-docker-containers/mssql/data:/var/opt/mssql/data
+      - /Users/hakan/code/basic-docker-containers/mssql/secrets:/var/opt/mssql/secrets
