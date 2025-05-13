@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  sMssql2:
+    hostname: sql2
+    container_name: cMssql2
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    cap_add: [ 'SYS_PTRACE' ]
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_USER=SA
+      - MSSQL_SA_PASSWORD=MyPass@word
+      - MSSQL_PID=Developer
+    ports:
+      - 1433:1433
+    volumes:
+      - /Users/mdp/code/basic-docker-containers/ubuntu-mssql/data:/var/opt/mssql/data
+      - /Users/mdp/code/basic-docker-containers/ubuntu-mssql/secrets:/var/opt/mssql/secrets
